@@ -15,5 +15,17 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "description": "Converted Spring Boot project -> Node.js (Express) + Sequelize (MySQL)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielfranca42/PROJETO-PI-NODEJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielfranca42/PROJETO-PI-NODEJS/issues"
+  },
+  "homepage": "https://github.com/gabrielfranca42/PROJETO-PI-NODEJS#readme"
 }

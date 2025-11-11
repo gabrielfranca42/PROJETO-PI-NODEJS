@@ -1,14 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
   const CooperativaModel = sequelize.define('CooperativaModel', {
-    id: { type: DataTypes.BIGINT, allowNull: true },
+    id: {
+      type: DataTypes.BIGINT,
+      primaryKey: true,      // 👈 necessário
+      autoIncrement: true,   // 👈 geralmente também necessário
+      allowNull: false
+    },
     nome: { type: DataTypes.STRING, allowNull: false },
     cnpj: { type: DataTypes.STRING, allowNull: false },
     telefone: { type: DataTypes.STRING, allowNull: false },
     email: { type: DataTypes.STRING, allowNull: false },
-    cep: { type: DataTypes.STRING, allowNull: false },
-    qntdAgricultor: { type: DataTypes.INTEGER, allowNull: false },
-    dataCadastro: { type: DataTypes.DATEONLY, allowNull: true },
-    enderecoModel: { type: DataTypes.INTEGER, allowNull: true },
-  }, { tableName: 'cooperativamodels', timestamps: true });
+    enderecoModel: { type: DataTypes.INTEGER, allowNull: false },
+  }, {
+    tableName: 'cooperativamodels',
+    timestamps: true // coloque false se não tiver createdAt / updatedAt
+  });
+
   return CooperativaModel;
 };
