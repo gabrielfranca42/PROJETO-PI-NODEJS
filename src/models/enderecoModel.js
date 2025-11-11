@@ -1,6 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
   const EnderecoModel = sequelize.define('EnderecoModel', {
-    id: { type: DataTypes.BIGINT, allowNull: true },
+    id: { 
+      type: DataTypes.BIGINT, 
+      allowNull: false, 
+      primaryKey: true,   
+      autoIncrement: true  
+    },
     rua: { type: DataTypes.STRING, allowNull: true },
     numero: { type: DataTypes.STRING, allowNull: true },
     complemento: { type: DataTypes.STRING, allowNull: true },
@@ -11,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     pontoReferencia: { type: DataTypes.STRING, allowNull: true },
     municipioModel: { type: DataTypes.INTEGER, allowNull: true },
     fornecedorModel: { type: DataTypes.INTEGER, allowNull: true },
-  }, { tableName: 'enderecomodels', timestamps: true });
+  }, { 
+    tableName: 'enderecomodels', 
+    timestamps: true // altere para false se sua tabela não tiver createdAt / updatedAt
+  });
+
   return EnderecoModel;
 };
