@@ -2,8 +2,8 @@ module.exports = (sequelize, DataTypes) => {
   const CooperativaModel = sequelize.define('CooperativaModel', {
     id: {
       type: DataTypes.BIGINT,
-      primaryKey: true,      // 👈 necessário
-      autoIncrement: true,   // 👈 geralmente também necessário
+      primaryKey: true,      
+      autoIncrement: true,   
       allowNull: false
     },
     nome: { type: DataTypes.STRING, allowNull: false },
